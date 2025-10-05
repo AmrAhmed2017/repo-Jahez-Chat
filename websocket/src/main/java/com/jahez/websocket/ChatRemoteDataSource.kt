@@ -1,0 +1,59 @@
+package com.jahez.websocket
+
+import com.jahez.websocket.model.ChatWebMessage
+import com.jahez.websocket.util.toTimeString
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
+import okhttp3.Response
+import okhttp3.WebSocket
+import okhttp3.WebSocketListener
+import javax.inject.Inject
+import javax.inject.Singleton
+
+
+@Singleton
+class ChatRemoteDataSource @Inject constructor(
+    private val manager: WebSocketManager
+) {
+
+    private val _incomingMessages = MutableSharedFlow<ChatWebMessage>(replay = 0)
+    val incomingMessages = _incomingMessages.asSharedFlow()
+
+    private val _events = MutableSharedFlow<String>(replay = 0)
+    val events = _events.asSharedFlow()
+
+    private val listener = object : WebSocketListener() {
+
+        override fun onMessage(webSocket: WebSocket, text: String) {
+            CoroutineScope(Dispatchers.IO).launch {
+                _incomingMessages.emit(
+                    ChatWebMessage(
+                        text = text,
+                        time = System.currentTimeMillis().toTimeString(),
+                        isMine = false,
+                        avatarUrl = "https://avatar.iran.liara.run/public/4"
+                    )
+                )
+            }
+        }
+
+        override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
+            CoroutineScope(Dispatchers.IO).launch { _events.emit("ERROR:${t.message ?: "unknown"}") }
+        }
+    }
+
+    fun connect() {
+        manager.connect(listener)
+    }
+
+    fun send(message: String): Boolean {
+        return manager.send(message)
+    }
+
+    fun close() {
+        manager.close()
+    }
+}
