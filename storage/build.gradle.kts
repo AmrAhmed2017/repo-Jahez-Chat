@@ -2,11 +2,12 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
+    kotlin("kapt")
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.jahez.websocket"
+    namespace = "com.jahez.storage"
     compileSdk = 36
 
     defaultConfig {
@@ -43,8 +44,17 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+
+    implementation(libs.room.runtime)
+    kapt(libs.room.compiler)
+
+    implementation(libs.room.ktx)
+
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-
-    implementation(libs.okhttp)
 }

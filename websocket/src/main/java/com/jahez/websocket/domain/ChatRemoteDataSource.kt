@@ -1,5 +1,6 @@
-package com.jahez.websocket
+package com.jahez.websocket.domain
 
+import com.jahez.websocket.WebSocketManager
 import com.jahez.websocket.model.ChatWebMessage
 import com.jahez.websocket.util.toTimeString
 import kotlinx.coroutines.CoroutineScope
@@ -12,7 +13,6 @@ import okhttp3.WebSocket
 import okhttp3.WebSocketListener
 import javax.inject.Inject
 import javax.inject.Singleton
-
 
 @Singleton
 class ChatRemoteDataSource @Inject constructor(
