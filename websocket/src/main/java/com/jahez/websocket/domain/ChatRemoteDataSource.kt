@@ -22,7 +22,7 @@ class ChatRemoteDataSource @Inject constructor(
     private val _incomingMessages = MutableSharedFlow<ChatWebMessage>(replay = 0)
     val incomingMessages = _incomingMessages.asSharedFlow()
 
-    private val _events = MutableSharedFlow<String>(replay = 0)
+    private val _events = MutableSharedFlow<AppThrowable>(replay = 0)
     val events = _events.asSharedFlow()
 
     private val listener = object : WebSocketListener() {
@@ -41,7 +41,7 @@ class ChatRemoteDataSource @Inject constructor(
         }
 
         override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-            CoroutineScope(Dispatchers.IO).launch { _events.emit("ERROR:${t.message ?: "unknown"}") }
+            CoroutineScope(Dispatchers.IO).launch { _events.emit(AppThrowable.SERVER_CONNECTION_ERROR) }
         }
     }
 

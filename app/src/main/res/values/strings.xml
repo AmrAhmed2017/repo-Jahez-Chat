@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Jahez Chat</string>
+    <string name="chat_name">Mohammed</string>
+    <string name="user_prompt">Type Something...</string>
+    <string name="connection_failed_error_message">Connection Failed, please check your network</string>
+    <string name="message_not_sent_error_message">Message not sent, please try again</string>
+    <string name="empty_message_warning">Can\'t send empty message</string>
+    <string name="retry_button">Retry</string>
+    <string name="dialog_warning_title">warning</string>
+    <string name="calling_message">Calling Mohammed...</string>
 </resources>

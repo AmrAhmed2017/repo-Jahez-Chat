@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">جاهز شات</string>
+    <string name="chat_name">محمد</string>
+    <string name="user_prompt">اكتب هنا…</string>
+    <string name="connection_failed_error_message">انقطع الاتصال, من فضلك تأكد من اتصالك بالانترنت</string>
+    <string name="message_not_sent_error_message">لم يتم إرسال الرسالة, حاول مرة أخرى</string>
+    <string name="empty_message_warning">لا يمكن إرسال رسالة فارغة</string>
+    <string name="retry_button">إعادة المحاولة</string>
+    <string name="dialog_warning_title">تحذير</string>
+    <string name="calling_message">الاتصال بممحمد…</string>
+</resources>

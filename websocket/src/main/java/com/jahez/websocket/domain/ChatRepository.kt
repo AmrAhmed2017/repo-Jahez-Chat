@@ -7,6 +7,6 @@ interface ChatRepository {
     fun connect()
     suspend fun sendMessage(text: ChatWebMessage): Boolean
     fun observeIncomingMessages(): Flow<ChatWebMessage>
-    fun observeEvents(): Flow<String>
+    fun observeEvents(): Flow<AppThrowable>
     fun close()
 }
