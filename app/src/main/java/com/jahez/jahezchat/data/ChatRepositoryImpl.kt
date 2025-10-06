@@ -23,20 +23,18 @@ class ChatRepositoryImpl @Inject constructor(
         remote.connect()
     }
 
-    override suspend fun sendMessage(text: ChatWebMessage): Boolean {
-        val isSent = remote.send(text.text)
+    override suspend fun sendMessage(message: ChatWebMessage): Boolean {
+        val isSent = remote.send(message.message)
         if (isSent) {
             insertMessage(
-                text.toEntity()
+                message.toEntity()
             )
         }
         return isSent
     }
 
     override fun observeIncomingMessages() =
-
-        remote.incomingMessages.onEach { msgText ->
-
+        remote.incomingMessage.onEach { msgText ->
             insertMessage(msgText.toEntity())
         }
 

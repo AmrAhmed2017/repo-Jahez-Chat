@@ -14,7 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.jahez.systemdesign.R
-import com.jahez.jahezchat.presentation.viewModel.NewChatViewModel
+import com.jahez.jahezchat.presentation.viewModel.ChatViewModel
 import com.jahez.jahezchat.ui.theme.JahezChatTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JahezChatTheme {
                 Scaffold(modifier = Modifier.Companion.fillMaxSize()) { innerPadding ->
-                    val viewModel: NewChatViewModel = hiltViewModel()
+                    val viewModel: ChatViewModel = hiltViewModel()
                     val state by viewModel.uiState.collectAsState()
 
                     LaunchedEffect(key1 = Unit) {

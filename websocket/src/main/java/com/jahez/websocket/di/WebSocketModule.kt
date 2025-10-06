@@ -1,5 +1,6 @@
 package com.jahez.websocket.di
 
+import com.jahez.websocket.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,5 +21,5 @@ object WebSocketModule {
     @Provides
     @Singleton
     fun provideOkHttpRequest(): Request =
-        Request.Builder().url("wss://ws.postman-echo.com/raw").build()
+        Request.Builder().url(BuildConfig.CHAT_SERVER_URL).build()
 }

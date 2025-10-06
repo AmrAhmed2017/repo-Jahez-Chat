@@ -44,7 +44,7 @@ fun SenderMessageBubble(
                 .wrapContentWidth()
         ) {
             Text(
-                message.text,
+                message.message,
                 color = MaterialTheme.colorScheme.primary,
                 style = Body1Typography
             )

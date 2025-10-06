@@ -19,8 +19,8 @@ class ChatRemoteDataSource @Inject constructor(
     private val manager: WebSocketManager
 ) {
 
-    private val _incomingMessages = MutableSharedFlow<ChatWebMessage>(replay = 0)
-    val incomingMessages = _incomingMessages.asSharedFlow()
+    private val _incomingMessage = MutableSharedFlow<ChatWebMessage>(replay = 0)
+    val incomingMessage = _incomingMessage.asSharedFlow()
 
     private val _events = MutableSharedFlow<AppThrowable>(replay = 0)
     val events = _events.asSharedFlow()
@@ -29,12 +29,11 @@ class ChatRemoteDataSource @Inject constructor(
 
         override fun onMessage(webSocket: WebSocket, text: String) {
             CoroutineScope(Dispatchers.IO).launch {
-                _incomingMessages.emit(
+                _incomingMessage.emit(
                     ChatWebMessage(
-                        text = text,
+                        message = text,
                         time = System.currentTimeMillis().toTimeString(),
-                        isMine = false,
-                        avatarUrl = "https://avatar.iran.liara.run/public/4"
+                        isMine = false
                     )
                 )
             }

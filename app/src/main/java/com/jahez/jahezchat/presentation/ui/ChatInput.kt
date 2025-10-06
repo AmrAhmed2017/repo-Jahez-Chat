@@ -90,7 +90,7 @@ fun ChatInput(
                     if (message.isNotEmpty() && message.isNotBlank()) {
                         onSendClick.invoke(
                             ChatUIMessage(
-                                text = message,
+                                message = message,
                                 time = System.currentTimeMillis().toTimeString(),
                                 isMine = true
                             )

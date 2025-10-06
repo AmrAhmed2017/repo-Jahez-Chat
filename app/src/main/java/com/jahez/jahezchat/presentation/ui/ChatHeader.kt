@@ -51,7 +51,7 @@ fun ChatHeader(
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_back),
-                    contentDescription = "Back",
+                    contentDescription = null,
                     tint = Color.Black
                 )
             }
@@ -69,7 +69,7 @@ fun ChatHeader(
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_phone),
-                    contentDescription = "Call",
+                    contentDescription = null,
                     tint = Color.Black
                 )
             }

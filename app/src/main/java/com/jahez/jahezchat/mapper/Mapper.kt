@@ -6,7 +6,7 @@ import com.jahez.websocket.model.ChatWebMessage
 
 fun ChatWebMessage.toEntity(): ChatMessageEntity =
     ChatMessageEntity(
-        text = this.text,
+        text = this.message,
         time = this.time,
         isMine = this.isMine,
         avatarUrl = this.avatarUrl
@@ -14,7 +14,7 @@ fun ChatWebMessage.toEntity(): ChatMessageEntity =
 
 fun ChatUIMessage.toWebMessage(): ChatWebMessage =
     ChatWebMessage(
-        text = this.text,
+        message = this.message,
         time = this.time,
         isMine = this.isMine,
         avatarUrl = this.avatarUrl
@@ -22,7 +22,7 @@ fun ChatUIMessage.toWebMessage(): ChatWebMessage =
 
 fun ChatWebMessage.toUIMessage(): ChatUIMessage =
     ChatUIMessage(
-        text = this.text,
+        message = this.message,
         time = this.time,
         isMine = this.isMine,
         avatarUrl = this.avatarUrl

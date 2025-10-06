@@ -51,7 +51,7 @@ fun ReceiverMessageBubble(
                 .wrapContentWidth()
         ) {
             Text(
-                message.text,
+                message.message,
                 color = MaterialTheme.colorScheme.tertiary,
                 style = Body1Typography
             )

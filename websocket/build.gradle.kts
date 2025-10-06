@@ -12,6 +12,15 @@ android {
     defaultConfig {
         minSdk = 24
 
+
+        buildFeatures {
+            buildConfig = true
+        }
+        buildConfigField(
+            "String",
+            "CHAT_SERVER_URL",
+            "\"wss://ws.postman-echo.com/raw\""
+        )
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
