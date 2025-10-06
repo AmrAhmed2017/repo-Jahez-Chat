@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.jahez.jahezchat.R
+import com.jahez.systemdesign.R
 import com.jahez.jahezchat.presentation.model.ChatUIMessage
 import com.jahez.jahezchat.ui.theme.Body2Typography
 import com.jahez.websocket.domain.AppThrowable

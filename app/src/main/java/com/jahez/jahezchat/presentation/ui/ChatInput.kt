@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.jahez.jahezchat.R
+import com.jahez.systemdesign.R
 import com.jahez.jahezchat.presentation.model.ChatUIMessage
 import com.jahez.jahezchat.ui.theme.DateColor
 import com.jahez.websocket.util.toTimeString

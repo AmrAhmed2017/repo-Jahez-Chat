@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation(project(":websocket"))
     implementation(project(":storage"))
+    implementation(project(":systemdesign"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -68,6 +69,6 @@ dependencies {
     implementation(libs.coil)
 
     implementation(libs.room.runtime)
-    
+
     implementation(libs.coroutines.android)
 }

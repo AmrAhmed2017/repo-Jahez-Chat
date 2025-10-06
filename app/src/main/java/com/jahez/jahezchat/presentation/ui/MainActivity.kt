@@ -13,7 +13,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.jahez.jahezchat.R
+import com.jahez.systemdesign.R
 import com.jahez.jahezchat.presentation.viewModel.NewChatViewModel
 import com.jahez.jahezchat.ui.theme.JahezChatTheme
 import dagger.hilt.android.AndroidEntryPoint

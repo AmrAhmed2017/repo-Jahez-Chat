@@ -23,3 +23,4 @@ rootProject.name = "Jahez Chat"
 include(":app")
 include(":websocket")
 include(":storage")
+include(":systemdesign")
